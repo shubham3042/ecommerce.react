@@ -38,7 +38,7 @@ function AddCart(props) {
         if(localStorage.getItem('user_id')!==null)
         {
         props.removeFromAddcart(id);
-        axios.post('http://secret-bastion-22485.herokuapp.com/deletecart',{
+        axios.post('https://secret-bastion-22485.herokuapp.com/deletecart',{
             user_id:localStorage.getItem('user_id'),
             product_id:id
         })
@@ -54,7 +54,7 @@ function AddCart(props) {
 
     const incremet=(id,quality)=>{
         props.updateQualityAdd(id,quality+1);
-        axios.post('http://secret-bastion-22485.herokuapp.com/addcart/increment',{
+        axios.post('https://secret-bastion-22485.herokuapp.com/addcart/increment',{
             user_id:localStorage.getItem('user_id'),
             product_id:id,
             quantity:quality+1

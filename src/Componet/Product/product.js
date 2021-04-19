@@ -27,7 +27,7 @@ const Product =(props)=>{
 	const [review,setReview]=useState('');
 	const [dataReview,setDataReview]=useState([]);
 	useEffect(async() => {  
-		const ans=await axios.get(`http://secret-bastion-22485.herokuapp.com/${id}`);
+		const ans=await axios.get(`https://secret-bastion-22485.herokuapp.com/${id}`);
 		setData(ans.data);
 		console.log(ans.data);
 		obj={name:ans.data.productname,product_id:ans.data.product_id,imageURl:ans.data.product_image,price:ans.data.product_price};

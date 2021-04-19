@@ -49,7 +49,7 @@ function Checkout (props){
     }
     const callAddAdress=async(e)=>{
         e.preventDefault();
-        const ans=await axios.post('http://secret-bastion-22485.herokuapp.com/user/address',{
+        const ans=await axios.post('https://secret-bastion-22485.herokuapp.com/user/address',{
             address:address,
             address2:address2,
             city:city,
@@ -71,7 +71,7 @@ function Checkout (props){
         setDisplayAddress(false);
     }
     useEffect(async()=>{
-        const ans=await axios.post('http://secret-bastion-22485.herokuapp.com/getuser/address',{
+        const ans=await axios.post('https://secret-bastion-22485.herokuapp.com/getuser/address',{
                 user_id:localStorage.getItem('user_id')
         });
         console.log(ans.data);
@@ -88,7 +88,7 @@ function Checkout (props){
         //setRedirect(true);
         setPaymentAlert(true);
        // localStorage.removeItem('amount');
-       axios.post('http://secret-bastion-22485.herokuapp.com/addHistory',{
+       axios.post('https://secret-bastion-22485.herokuapp.com/addHistory',{
             cart:props.todo.AddToCartReducer.Addcart,
             user_id:localStorage.getItem('user_id'),
             address:value

@@ -18,7 +18,7 @@ const SearchFeed = () => {
     useEffect(async () => {
         setValue(query.get('value'))
         if (query.get('type') === 'search') {
-            const ans = await axios.get(`http://secret-bastion-22485.herokuapp.com/search?value=${value}`);
+            const ans = await axios.get(`https://secret-bastion-22485.herokuapp.com/search?value=${value}`);
             if (ans.data === false) {
                 setMsg('not found');
                 setIsloading(false);
@@ -34,11 +34,11 @@ const SearchFeed = () => {
 
         }
         else if (query.get('type') === 'gender') {
-            axios.get(`http://secret-bastion-22485.herokuapp.com/filter?value=${value}`)
+            axios.get(`https://secret-bastion-22485.herokuapp.com/filter?value=${value}`)
                 .then(ans => setData1(ans.data)).then(setIsloading(false));
         }
         else if (query.get('type') === 'acc') {
-            axios.get(`http://secret-bastion-22485.herokuapp.com/category?value=${value}`)
+            axios.get(`https://secret-bastion-22485.herokuapp.com/category?value=${value}`)
                 .then(ans => setData1(ans.data))
                 .then(setIsloading(false));
         }

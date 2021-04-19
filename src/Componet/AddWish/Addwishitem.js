@@ -49,7 +49,7 @@ function Addwishitem(props) {
     {
      props.removefromWishlist(id);
        console.log(id);
-       axios.post('http://secret-bastion-22485.herokuapp.com/deletewish',{
+       axios.post('https://secret-bastion-22485.herokuapp.com/deletewish',{
 				user_id:localStorage.getItem('user_id'),
 				product_id:id
 			})

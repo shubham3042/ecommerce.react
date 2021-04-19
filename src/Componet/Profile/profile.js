@@ -7,7 +7,7 @@ const Profile=(props)=>{
     const [msg,setMsg]=useState('');
     let dated;
     useEffect(async()=>{
-     const ans=await axios.post('http://secret-bastion-22485.herokuapp.com/getHistory',{
+     const ans=await axios.post('https://secret-bastion-22485.herokuapp.com/getHistory',{
                 user_id:localStorage.getItem('user_id')
         })
         //console.log(ans.data);
@@ -19,13 +19,13 @@ const Profile=(props)=>{
     }
     const onsubmit=async()=>{
         console.log(date);
-         const ans=await axios.get(`http://secret-bastion-22485.herokuapp.com/selectdate?date=${date}&id=${localStorage.getItem('user_id')}`);
+         const ans=await axios.get(`https://secret-bastion-22485.herokuapp.com/selectdate?date=${date}&id=${localStorage.getItem('user_id')}`);
         //console.log(ans.data);
         setData(ans.data);
         setMsg("You not Order anything that date");
     }
     const showall=async()=>{
-        const ans=await axios.post('http://secret-bastion-22485.herokuapp.com/getHistory',{
+        const ans=await axios.post('https://secret-bastion-22485.herokuapp.com/getHistory',{
             user_id:localStorage.getItem('user_id')
     })
     //console.log(ans.data);

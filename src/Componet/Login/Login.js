@@ -45,7 +45,7 @@ function Login(props) {
 		setPassword(e.target.value)
 	}
 	const onReceiveInput=(response)=>{
-		axios.post('http://secret-bastion-22485.herokuapp.com/sendMail',{
+		axios.post('https://secret-bastion-22485.herokuapp.com/sendMail',{
 				email:response
 		}).then(res=>alert(res.data));
 		setEmailAlert(false);
@@ -58,7 +58,7 @@ function Login(props) {
 	}
 	const onSubmit=async(e)=>{
 		e.preventDefault();
-   const ans=await axios.post('http://secret-bastion-22485.herokuapp.com/login',{
+   const ans=await axios.post('https://secret-bastion-22485.herokuapp.com/login',{
 			email:email,
 			password:password
 		});

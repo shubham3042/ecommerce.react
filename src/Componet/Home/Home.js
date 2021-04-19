@@ -13,7 +13,7 @@ const Home = (props) => {
 		if(props.todo.AddWishReducer.cart.length===0 && localStorage.getItem('user_id')!==null)
 		{
 			console.log("its matched");
-	    const ans=await axios.post('http://secret-bastion-22485.herokuapp.com/wishdata',{
+	    const ans=await axios.post('https://secret-bastion-22485.herokuapp.com/wishdata',{
 		user_id:localStorage.getItem('user_id')
         	})
 			ans.data.map(item=>{
@@ -30,7 +30,7 @@ const Home = (props) => {
 		if(props.todo.AddToCartReducer.Addcart.length===0  && localStorage.getItem('user_id')!==null)
 		{
 			console.log("cart is called");
-			const ans1=await axios.post('http://secret-bastion-22485.herokuapp.com/cartdata',{
+			const ans1=await axios.post('https://secret-bastion-22485.herokuapp.com/cartdata',{
 				user_id:localStorage.getItem('user_id')
 			})
 			console.log(ans1.data);

@@ -10,7 +10,7 @@ const Register =()=>{
   const [res,setRes]=useState(false);
   const onsubmit=(e)=>{
     e.preventDefault();
-    axios.post('http://secret-bastion-22485.herokuapp.com/signup',{
+    axios.post('https://secret-bastion-22485.herokuapp.com/signup',{
       fullname:fullName,
       email:email,
       mobilenum:mobilenum,

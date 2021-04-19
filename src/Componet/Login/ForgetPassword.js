@@ -24,7 +24,7 @@ function ForgetPassword() {
         console.log(password);
         console.log(confirmpassword);
         if (password === confirmpassword) {
-          const ans =await axios.post('http://secret-bastion-22485.herokuapp.com/user/Changepassword',{
+          const ans =await axios.post('https://secret-bastion-22485.herokuapp.com/user/Changepassword',{
                 id:id,
                 password:password
             });

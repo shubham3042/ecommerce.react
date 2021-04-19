@@ -17,7 +17,7 @@ function Cardlist(props) {
                  //await setData(ans.data);
         },[]);
 		const getproducts=async()=>{
-			const ans=await axios.get('http://secret-bastion-22485.herokuapp.com/getproduct');
+			const ans=await axios.get('https://secret-bastion-22485.herokuapp.com/getproduct');
                  setData(ans.data);
                  console.log(ans.data);
 		}
@@ -29,7 +29,7 @@ function Cardlist(props) {
 		}
 		else
 		{
-        const ans=await axios.get(`http://secret-bastion-22485.herokuapp.com/filter?value=${e.target.value}`);
+        const ans=await axios.get(`https://secret-bastion-22485.herokuapp.com/filter?value=${e.target.value}`);
 		setData(ans.data);
 		}
     }
@@ -42,7 +42,7 @@ function Cardlist(props) {
 	const onSearch=async(e)=>{
 			if(e.which===13)
 			{
-				const ans=await axios.get(`http://secret-bastion-22485.herokuapp.com/search?value=${e.target.value}`);
+				const ans=await axios.get(`https://secret-bastion-22485.herokuapp.com/search?value=${e.target.value}`);
 		        setData(ans.data);
 			}
 	}
