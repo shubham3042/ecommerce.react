@@ -200,7 +200,14 @@ class Header extends React.Component {
 								<Dropdown.Item href="#/action-3"></Dropdown.Item>
 							</Dropdown.Menu>
 							:<Dropdown.Menu>
+								<Dropdown.Item>
+								<Link to="/" >Home</Link>
+								</Dropdown.Item>
+								<Dropdown.Item>
+								<Link to="/products" >Shop</Link>
+								</Dropdown.Item>
 								<Link to="/login" style={{marginLeft:"20px"}}>Login</Link>
+								
 							</Dropdown.Menu>
 	                        }                     
 							</Dropdown>

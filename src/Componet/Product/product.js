@@ -27,7 +27,7 @@ const Product =(props)=>{
 	const [review,setReview]=useState('');
 	const [dataReview,setDataReview]=useState([]);
 	useEffect(async() => {  
-		const ans=await axios.get(`https://secret-bastion-22485.herokuapp.com/${id}`);
+		const ans=await axios.get(`https://secret-bastion-22485.herokuapp.com/productDetail/${id}`);
 		setData(ans.data);
 		console.log(ans.data);
 		obj={name:ans.data.productname,product_id:ans.data.product_id,imageURl:ans.data.product_image,price:ans.data.product_price};
@@ -59,7 +59,7 @@ const onTabChange=async(id1)=>{
 		{
 			setTab('tab3');
 			console.log(id);
-		const ans=await	axios.get(`http://secret-bastion-22485.herokuapp.com/getReview/${id}`);
+		const ans=await	axios.get(`https://secret-bastion-22485.herokuapp.com/getReview/${id}`);
 		console.log("tab",ans.data);
 		setDataReview(ans.data);
 		}
@@ -70,7 +70,7 @@ const onTabChange=async(id1)=>{
 	}
 	const reviewsubmit=async(e)=>{
 		e.preventDefault();
-	const ans=await axios.post('http://secret-bastion-22485.herokuapp.com/review',{
+	const ans=await axios.post('https://secret-bastion-22485.herokuapp.com/review',{
 			
 				user_id:localStorage.getItem('user_id'),
 				product_id:id,
@@ -80,7 +80,8 @@ const onTabChange=async(id1)=>{
 			
 		});
 		console.log(ans.data);
-		let l1=dataReview;
+		let l1=[]
+		l1=dataReview;
 		const obj={
 			user_id:ans.data.user_id,
 			id:ans.data.id,
@@ -157,9 +158,9 @@ const onConfirm = () => {
 							<div class="slick3 gallery-lb">
 								<div class="item-slick3" data-thumb="images/product-detail-01.jpg">
 									<div class="wrap-pic-w pos-relative">
-										<img src={`http://secret-bastion-22485.herokuapp.com/uploads/${data.product_image}`} alt="IMG-PRODUCT" />
+										<img src={`https://secret-bastion-22485.herokuapp.com/uploads/${data.product_image}`} alt="IMG-PRODUCT" />
 
-										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href={`http://localhost:8000/uploads/${data.product_image}`}>
+										<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href={`https://secret-bastion-22485.herokuapp.com/uploads/${data.product_image}`}>
 											<i class="fa fa-expand"></i>
 										</a>
 									</div>

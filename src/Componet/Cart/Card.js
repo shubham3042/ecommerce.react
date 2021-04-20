@@ -131,7 +131,7 @@ function Card(props) {
 		  :null
 	}
 			<div class="block2 hov-img0">
-				<img src={`http://secret-bastion-22485.herokuapp.com/uploads/${props.image1}`} style={{cursor:"pointer"}} alt="IMG-PRODUCT" onClick={()=>productDetail(props.product_id)} />
+				<img src={`https://secret-bastion-22485.herokuapp.com/uploads/${props.image1}`} style={{cursor:"pointer"}} alt="IMG-PRODUCT" onClick={()=>productDetail(props.product_id)} />
 			</div>
 			<div class="block2-txt flex-w flex-t p-t-14">
 				<div class="block2-txt-child1 flex-col-l ">
